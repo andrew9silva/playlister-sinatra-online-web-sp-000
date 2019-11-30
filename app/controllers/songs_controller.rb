@@ -24,14 +24,7 @@ class SongController < ApplicationController
     artist_entry = params[:song][:artist]
     @artist = Artist.find_or_create_by(:name => artist_entry)
 
-
-
-    if Artist.find_by(:name => artist_entry)
-      artist = Artist.find_by(:name => artist_entry)
-    else
-      artist = Artist.create(:name => artist_entry)
-    end
-    @song.artist = artist
+    
     @song.save
 
     genre_selections = params[:song][:genres]
