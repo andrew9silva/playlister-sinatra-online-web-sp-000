@@ -9,4 +9,6 @@ class SongController < ApplicationController
     @song = Song.find_by_slug(slug)
     erb :'songs/show'
   end
+
+  get '/songs/new'
 end
