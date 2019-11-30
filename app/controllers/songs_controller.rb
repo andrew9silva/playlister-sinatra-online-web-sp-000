@@ -30,4 +30,10 @@ class SongController < ApplicationController
     flash[:message] = "Successfully created song."
     redirect to "songs/#{@song.slug}"
   end
+
+  get '/songs/:slug' do
+    slug = params[:slug]
+    @song = Song.find_by_slug(slug)
+    erb :'songs/show'
+  end
 end
