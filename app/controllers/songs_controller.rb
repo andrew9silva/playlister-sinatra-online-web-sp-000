@@ -29,6 +29,11 @@ class SongController < ApplicationController
     @song.artist = artist
     @song.save
 
+    genre_selections = params[:song][:genres]
+    genre_selections.each do |genre|
+      @song.genres << Genre.find(genre)
+    end
+
     flash[:message] = "Successfully created song."
     redirect to "songs/#{@song.slug}"
   end
