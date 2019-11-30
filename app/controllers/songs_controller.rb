@@ -1,3 +1,5 @@
+require 'rack-flash3'
+
 class SongController < ApplicationController
   use Rack:Flash
   get '/songs' do
