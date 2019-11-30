@@ -11,6 +11,6 @@ class SongController < ApplicationController
   end
 
   get '/songs/new' do
-    
+    @genres = Genre.all
   end
 end
