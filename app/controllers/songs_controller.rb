@@ -17,5 +17,8 @@ class SongController < ApplicationController
 
   post '/songs' do
     @song = Song.create(:name => params[:song][:name])
+
+    artist = params[:song][:arstist]
+    
   end
 end
