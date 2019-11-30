@@ -25,5 +25,6 @@ class SongController < ApplicationController
     else
       artist = Artist.create(:name => artist_entry)
     end
+    @song.artist = artist
   end
 end
