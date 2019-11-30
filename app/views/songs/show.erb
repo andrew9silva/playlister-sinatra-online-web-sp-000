@@ -7,7 +7,7 @@
 <p><u>Genres:</u></p>
   <ul>
     <% @song.genres.each do |genre| %>
-      <li><a href="/genres/<%= genre.slug %>"><%= @song.genre.name %></a></li>
+      <li><a href="/genres/<%= genre.slug %>"><%= genre.name %></a></li>
     <% end %>
   </ul>
 <a href="/songs/<%= @song.slug %>/edit"><input type="button" value="Edit Song"></a>
