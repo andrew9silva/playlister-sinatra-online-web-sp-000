@@ -10,7 +10,7 @@ class SongController < ApplicationController
   end
 
   post '/songs' do
-    
+    binding.pry
     @song = Song.create(:name => params[:song][:name])
 
     artist_entry = params[:song][:arstist]
