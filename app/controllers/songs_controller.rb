@@ -15,7 +15,7 @@ class SongController < ApplicationController
     erb :'songs/new'
   end
 
-  post '/songs' do
+  post '/songs/new' do
     @song = Song.create(:name => params[:song][:name])
 
     artist_entry = params[:song][:arstist]
@@ -29,6 +29,6 @@ class SongController < ApplicationController
     @song.save
 
     flash[:message] = "Successfully created song."
-    redirect to "songs/#{@song.slug}"  
+    redirect to "songs/#{@song.slug}"
   end
 end
