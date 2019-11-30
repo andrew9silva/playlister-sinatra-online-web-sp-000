@@ -10,5 +10,6 @@ class SongController < ApplicationController
     erb :'songs/show'
   end
 
-  get '/songs/new'
+  get '/songs/new' do
+  end
 end
