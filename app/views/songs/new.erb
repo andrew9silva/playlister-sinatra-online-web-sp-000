@@ -7,5 +7,5 @@
   <% @genres.each do |genre| %>
     <input id="<%= genre.name %>" type="checkbox" name="song[genres][]" value="<%= genre.id %>,%= genre.name %>">
   <% end %>
-  <input
+  <input type="submit" value="Create Song">
 </form>
