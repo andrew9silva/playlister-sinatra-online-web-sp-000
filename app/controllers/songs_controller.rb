@@ -19,6 +19,7 @@ class SongController < ApplicationController
     @song = Song.create(:name => params[:song][:name])
 
     artist = params[:song][:arstist]
-    
+
+    if Artist.find_by(:name => artist)
   end
 end
