@@ -22,7 +22,7 @@ class SongController < ApplicationController
 
     @song = Song.create(:name => params[:song][:name])
     artist_entry = params[:song][:artist]
-    @artist = Artist.find_or_create_by(:name => artist_entry)
+    @song.artist = Artist.find_or_create_by(:name => artist_entry)
 
     genre_selections = params[:song][:genres]
     genre_selections.each do |genre|
