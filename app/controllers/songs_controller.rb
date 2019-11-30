@@ -21,9 +21,10 @@ class SongController < ApplicationController
   post '/songs' do
 
     @song = Song.create(:name => params[:song][:name])
+    artist_entry = params[:song][:artist]
     @artist = Artist.find_or_create_by(:name => artist_entry)
 
-    artist_entry = params[:song][:artist]
+
 
     if Artist.find_by(:name => artist_entry)
       artist = Artist.find_by(:name => artist_entry)
