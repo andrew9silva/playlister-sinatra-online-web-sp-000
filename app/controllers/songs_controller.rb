@@ -9,8 +9,14 @@ class SongController < ApplicationController
     erb :'songs/new'
   end
 
+  get '/songs/:slug' do
+    slug = params[:slug]
+    @song = Song.find_by_slug(slug)
+    erb :'songs/show'
+  end
+
   post '/songs' do
-    
+
     @song = Song.create(:name => params[:song][:name])
 
     artist_entry = params[:song][:arstist]
@@ -30,12 +36,6 @@ class SongController < ApplicationController
 
     flash[:message] = "Successfully created song."
     redirect to "songs/#{@song.slug}"
-  end
-
-  get '/songs/:slug' do
-    slug = params[:slug]
-    @song = Song.find_by_slug(slug)
-    erb :'songs/show'
   end
 
   patch '/songs/:slug' do
