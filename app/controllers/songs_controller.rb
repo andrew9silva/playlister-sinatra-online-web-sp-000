@@ -1,4 +1,4 @@
-require 'rack-flash3'
+require 'rack-flash'
 
 class SongController < ApplicationController
   use Rack:Flash
