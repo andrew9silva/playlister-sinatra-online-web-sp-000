@@ -2,7 +2,7 @@ module Slugifiable
   module InstanceMethods
     def slug
       artist_name = self.name
-      slug = artist_name.gsub(' ', '-').gsub(/[^\w-]/, '')
+      slug = artist_name.gsub(' ', '-').gsub(/[^\w-]/, '').downcase
     end
   end
 
